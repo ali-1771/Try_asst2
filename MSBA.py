@@ -3,11 +3,12 @@ import streamlit as st
 import plotly.express as px
 import plotly.graph_objects as go
 
+url = "https://raw.githubusercontent.com/ali-1771/Try_asst2/main/Airline%20Dataset.csv"
 st.title('Data on Aviation Industry')
 st.write('The dataset offers comprehensive insights into global airline operations, covering passenger demographics, flight details, crew information, and flight statuses, serving as a valuable resource for optimizing travel experiences and enhancing flight operations.')
 @st.cache_data
 def load_data(nrows):
-    data = pd.read_csv('C:/Users/User/OneDrive/Desktop/MSBA 325/Airline Dataset.csv', nrows=nrows)
+    data = pd.read_csv(url , nrows=nrows)
     lowercase = lambda x: str(x).lower()
     data.rename(lowercase, axis='columns', inplace=True)
     return data
