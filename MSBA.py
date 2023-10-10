@@ -8,7 +8,7 @@ st.title('Data on Aviation Industry')
 st.write('The dataset offers comprehensive insights into global airline operations, covering passenger demographics, flight details, crew information, and flight statuses, serving as a valuable resource for optimizing travel experiences and enhancing flight operations.')
 @st.cache_data
 def load_data(nrows):
-    data = pd.read_csv(url, nrows=nrows)
+    data = pd.read_csv("Airline Dataset.csv", nrows=nrows)
     lowercase = lambda x: str(x).lower()
     data.rename(lowercase, axis='columns', inplace=True)
     return data
